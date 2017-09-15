@@ -29,6 +29,21 @@ public class TestTeam {
     assertEquals(name, t.getName());
   }
   
-  // TODO testGetHeadcoach
-  // TODO testGetFunding
+  // DONE testGetHeadcoach
+  
+  @Test
+  public void testGetHeadcoach() {
+    final String headcoach = "Klinsmann";
+    final Team t = makeTeamFixture(headcoach, "Klinsmann", 500);
+    assertEquals(headcoach, t.getHeadcoach());
+  }
+  
+  // DONE testGetFunding
+  
+  @Test
+  public void testGetHeadFunding() {
+    final String funding = "500";
+    final Team t = makeTeamFixture(funding, "Klinsmann", 500);
+    assertEquals(funding, t.getFunding());
+  }
 }
