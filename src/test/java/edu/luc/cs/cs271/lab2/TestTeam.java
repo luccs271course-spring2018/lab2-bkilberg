@@ -19,8 +19,27 @@ public class TestTeam {
     }
   }
   
-  // TODO testConstructorValidHeadcoach
-  // TODO testConstructorValidFunding
+  // DONE testConstructorValidHeadcoach
+  
+  @Test
+  public void testConstructorValidHeadcoach() {
+    try {
+      new Team("USA", null, 500);
+      fail("should have thrown IllegalArgumentException");
+    } catch (final Throwable ex) {
+    }
+  }
+  
+  // DONE testConstructorValidFunding
+  
+  @Test
+  public void testConstructorValidFunding() {
+    try {
+      new Team("USA", "Klinsmann", null);
+      fail("should have thrown IllegalArgumentException");
+    } catch (final Throwable ex) {
+    }
+  }
 
   @Test
   public void testGetName() {
