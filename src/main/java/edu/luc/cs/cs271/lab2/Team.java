@@ -23,8 +23,8 @@ public class Team {
     // DONE validity checking for headcoach
     // DONE validity checking for funding
     
-    if (funding == null) {
-      throw new IllegalArgumentException("funding is null");
+    if (funding <= 0) {
+      throw new IllegalArgumentException("funding is negative or zero");
     }
     
     this.name = name;
