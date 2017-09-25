@@ -23,16 +23,20 @@ public class Search {
 
   /** Looks for the position of the named team in a list. */
   public static Optional<Integer> findTeamPosition(final List<Team> list, final String key) {
-    // TODO complete this method
+    // DONE complete this method
     
-  // final int size = list.length;
-  //  for (int i = 0; i < size; i++){
-  //    if (list<i>.getName().equals(key)) {
-  //      return Optional.of(i);
-  //    }
-  //  }
+   final int length = list.size();
+   for (int i = 0; i < length; i++){
+      if (list.get(i).getName().equals(key)) {
+        return Optional.of(i);
+    }
+    else {
+   
     return Optional.empty();
-  } 
+    }
+   }
+   return Optional.empty();
+  }
   
   /** 
    * Looks for the position of the poorest team that has at least 
@@ -42,7 +46,19 @@ public class Search {
    */
    
   public static Optional<Integer> findTeamMinFunding(final Team[] arr, final int minFunding) {
-    // TODO complete this method
+    // DONE complete this method
+    
+    int min = 0;
+    int max = (arr.length -1);
+    
+    for(int i = 0; i <= max; i++){
+      if(minFunding == arr[i].getFunding()){
+        return Optional.of(i);
+      }
+      else if(minFunding < arr[i].getFunding()){
+        return Optional.of(i);
+      }
+    }
     return Optional.empty();
   }
   
@@ -61,7 +77,22 @@ public class Search {
     final int size = arr.length;
     // Initially search the entire array
     int low = 0;
-    int high = size - 1;
+    int high = (size - 1);
+    
+    if(arr !=null && minFunding !=0){
+      while (low < high){
+        int mid = (high + low)/2;
+          if(minFunding <= arr[mid].getFunding()){
+            high = mid;
+          }
+          else if(minFunding > arr[mid].getFunding()){
+            low = (mid + 1);
+          }
+          else{
+            return Optional.of(mid);
+          }
+      }
+    }
     // Keep going as long as there is more than one item to be checked
     // Eliminate the wrong half of the array
     // Return current item only if it meets the condition!
