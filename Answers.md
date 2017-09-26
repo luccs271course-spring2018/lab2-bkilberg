@@ -2,13 +2,13 @@
 ## Document outlining answers to the Lab 2 Questions
 
 ### What is the complexity of each of the four search methods in terms of array or list size n?
-findTeamPosition (array) --> O = 2.
+findTeamPosition (array) --> O(n) = 2.
 
-findTeamPosition (list) --> O = 2.
+findTeamPosition (list) --> O(n) = 2.
 
-findTeamMinFunding --> O = 3.
+findTeamMinFunding --> O(n) = 3.
 
-findTeamMinFundingFast --> O = 2.
+findTeamMinFundingFast --> O(n) = 2.
 
 ### What happens in the case of binary search if the array is not sorted?
 In the case of a binary search with an unsorted array, there is a chance that the search will not find the desired search value. If there is a value that is higher than the search value, but to the left of the search value in the array, it will not find it in the search.
