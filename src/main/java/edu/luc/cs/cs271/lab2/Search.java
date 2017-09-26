@@ -72,7 +72,7 @@ public class Search {
    * @post arr[result].funding >= minFunding && for all 0 <= i < result : arr[i].funding < minFunding
    */
   public static Optional<Integer> findTeamMinFundingFast(final Team[] arr, final int minFunding) {
-    // TODO complete this method
+    // DONE complete this method
     // Gets the array size
     final int size = arr.length;
     // Initially search the entire array
